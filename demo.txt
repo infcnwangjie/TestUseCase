@@ -1,0 +1,22 @@
+public class HiveCommonUse{
+	private Connection conn;
+	
+@Before
+
+public void  setUp() throws Exception
+conn=HiveConnectionUtil.getHiveJdbcConnectWithoutkerberos("8.8.9.3");
+TableCommUse.setConn(conn);
+}
+
+@Test
+public void test(){
+TableCommonUse.showDbs();
+TableCommonUse.showTables();
+TableCommonUse.queyAll("default","hbase_hive");
+}
+
+@After
+publkc void afrer(){
+sysout.println("after");
+}
+}
